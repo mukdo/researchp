@@ -35,7 +35,10 @@ namespace ResearchPaper
             }
 
             //loadgrid call here
-            loadgrid();
+            loadgrid_ofJournal();
+            loadgrid_ofConfarence();
+            loadgrid_ofBookChapter();
+
             //count call here in page load
             countJournals();
             countBookChapter();
@@ -45,13 +48,25 @@ namespace ResearchPaper
         } //here page_load end
 
         // gridview funtion here
-        public void loadgrid()
+        public void loadgrid_ofJournal()
         {
-            string query = @"select * FROM input_paper where PubDate BETWEEN '"+calender4+"' AND '"+ calender5 +"' ";
+            string query = @"select * FROM input_paper where PubDate BETWEEN '"+calender4+"' AND '"+ calender5 + "' AND Types = 'Journal' ";
             GridView1.DataSource = da.GetDataTable(query);
             GridView1.DataBind();
         }
 
+        public void loadgrid_ofConfarence()
+        {
+            string query = @"select * FROM input_paper where PubDate BETWEEN '" + calender4 + "' AND '" + calender5 + "' AND Types = 'Conference' ";
+            GridView2.DataSource = da.GetDataTable(query);
+            GridView2.DataBind();
+        }
+        public void loadgrid_ofBookChapter()
+        {
+            string query = @"select * FROM input_paper where PubDate BETWEEN '" + calender4 + "' AND '" + calender5 + "' AND Types = 'BookChapter' ";
+            GridView3.DataSource = da.GetDataTable(query);
+            GridView3.DataBind();
+        }
 
         public string progress(string query) // its work for counting query execution with parameter
         {

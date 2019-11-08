@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -250,6 +251,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="seminar.aspx" />
     <Content Include="SheetPrepair.aspx" />
     <Content Include="Site.Master" />
     <Content Include="user.aspx" />
@@ -417,6 +419,13 @@
     </Compile>
     <Compile Include="ready.aspx.designer.cs">
       <DependentUpon>ready.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seminar.aspx.cs">
+      <DependentUpon>seminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seminar.aspx.designer.cs">
+      <DependentUpon>seminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="SheetPrepair.aspx.cs">
       <DependentUpon>SheetPrepair.aspx</DependentUpon>
